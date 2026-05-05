@@ -11,7 +11,14 @@
 
 ## Notation
 1) Collections - In MongoDB, Tables are reffered as Collections.
-2) 
+
+
+## Keywords
+1) $eq - Equals to  
+2) $ne -  Not Equals to  
+3) $gt - Greater than
+4) $in - in  
+5) $nin - Not in  
 
 ## Mongdb Commands  
 1) show dbs -> Will list down the available DBs, you see admin, config, local dbs at start.  
@@ -27,4 +34,12 @@
 11) db.<collection_name>.find().sort({name:-1}).limit(2) -> This will sort collection by name in desending order (-1) and give top 2 records.
 12) db.<collection_name>.find().skip(1).limit(2) -> This will skip the record (1) and fetches next (2) records.
 13) db.<collection_name>.find({name:"john"}) -> This is similar to Where command in SQL (Where name ="John").
-14) db.<collection_name>.find({"name":"john"},{name:1, age:1, _id:0}) -> This means, from the records where name="john" it will get only name and age column values(1). This is similar to SELECT command.  
+14) db.<collection_name>.find({"name":"john"},{name:1, age:1, _id:0}) -> This means, from the records where name="john" it will get only name and age column values(1). This is similar to SELECT command.
+
+
+
+15) db.<collection_name>.find({name:{$eq:"value"}}) -> This will return records whos name is equal to "value".  
+16) db.<collection_name>.find({name:{$ne: "value"}}) -> This will return the records whose name is not equal to "value".
+17) db.<collection_name>.find({age: {$gt: value}}) -> This will return the records whpse age is greater than value.
+18) db.<collection_name>.fine({name:{$in:[value1, value]}}) -> This will return the records if those values are there in name.
+19) db.<collection_name>.find
